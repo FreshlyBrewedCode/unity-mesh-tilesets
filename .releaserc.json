@@ -1,0 +1,20 @@
+{
+  "tagFormat": "v${version}",
+  "plugins": [
+    ["@semantic-release/commit-analyzer", { "preset": "angular" }],
+    "@semantic-release/release-notes-generator",
+    ["@semantic-release/changelog", { 
+      "preset": "angular",
+      "changelogFile":"PATH_TO_YOUR_CHANGELOG.MD"
+    }],
+    ["@semantic-release/npm", { 
+      "npmPublish": false,
+      "pkgRoot":"XYZ1"
+    }],
+    ["@semantic-release/git", {
+      "assets": ["XYZ2", "XYZ3"],
+      "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+    }],
+    "@semantic-release/github"
+  ]
+}

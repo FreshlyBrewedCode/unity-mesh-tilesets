@@ -1,0 +1,16 @@
+{
+	"name": "com.username.reponame",
+	"version": "0.0.0",
+	"displayName": "Name of your repo",
+	"description": "Description of your repo.",
+	"unity": "2018.4",
+	"author": {
+		"name": "Your name",
+		"email": "Your email",
+		"url": "Your website"
+	},
+	"dependencies": {
+	},
+	"scopedRegistries": [
+	]
+}
