@@ -1,0 +1,15 @@
+{
+	"name": "com.freshlybrewedcode.unity-mesh-tilesets",
+	"version": "0.0.0",
+	"displayName": "Mesh Tilesets",
+	"description": "a Unity plugin to place objects along ProBuilder meshes based on rules from tileset. Heavily inspired by the tooling in Source 2.",
+	"unity": "2020.2",
+	"author": {
+		"name": "FreshlyBrewedCode",
+		"url": "https://github.com/FreshlyBrewedCode"
+	},
+	"dependencies": {
+		"com.unity.probuilder": "4.2.3"
+	},
+	"scopedRegistries": []
+}
