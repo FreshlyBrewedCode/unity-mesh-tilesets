@@ -70,6 +70,25 @@ Here are some example use cases for the tool. I am sure there are many more crea
 
 ![Building Example](/Docs/Media/building_example.png)
 
+## Support Me
+
+If you like this tool and you would like to support me, feel free to buy me coffee:
+
+[![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
+
+Thank you :)
+
+## Contributing
+
+Pull request welcome. 
+
+*TODO*
+
+## License
+
+MIT
+
+The tool can be used freely in any project of any scale. Please don't redistribute the tool through the Unity Assetstore or a similar marketplace.
 
 [Unity]: https://unity.com
 [ProBuilder]: https://unity3d.com/de/unity/features/worldbuilding/probuilder
