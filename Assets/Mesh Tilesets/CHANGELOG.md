@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/compare/v1.0.2...v1.0.3) (2021-01-02)
+
+
+### Bug Fixes
+
+* fix material of pipe kit ([1f83984](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/commit/1f83984e811ffb1c9cd7a9d3eb83c9164db8e934))
+* remove GUILayout calls from `TilesetFlagsMaskDrawer` ([4705437](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/commit/4705437011143207ddd4673b09af876ff15c48a8))
+
 ## [1.0.2](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/compare/v1.0.1...v1.0.2) (2021-01-02)
 
 
