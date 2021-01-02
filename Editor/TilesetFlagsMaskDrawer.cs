@@ -1,4 +1,5 @@
-﻿using MeshTilesets;
+﻿using System.Linq;
+using MeshTilesets;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,11 +8,21 @@ namespace MeshTilesetsEditor
     [CustomPropertyDrawer(typeof(TilesetFlagsMask))]
     public class TilesetFlagsMaskDrawer : PropertyDrawer
     {
-        private bool foldout = true;
-
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return 0;
+            if (property.serializedObject.targetObject is Component c)
+            {
+                var tileset = c.gameObject.GetComponentInParent<Tileset>();
+                if (tileset != null)
+                {
+                    if (!property.isExpanded) return EditorGUIUtility.singleLineHeight;
+                    
+                    var mask = property.GetValue<TilesetFlagsMask>();
+                    return EditorGUIUtility.singleLineHeight + tileset.TilesetFlags.GetDisplayHeight();
+                }
+            }
+
+            return EditorGUIUtility.singleLineHeight * 2;
         }
 
         // TODO: implement generic property drawer 
@@ -24,7 +35,9 @@ namespace MeshTilesetsEditor
                 {
                     // EditorGUI.BeginProperty(position, label, property);
                     var mask = property.GetValue<TilesetFlagsMask>();
-                    DrawTilesetFlagsMask(label, mask, tileset, ref foldout);
+                    bool foldout = property.isExpanded;
+                    DrawTilesetFlagsMask(position, label, mask, tileset, ref foldout);
+                    property.isExpanded = foldout;
                     if (GUI.changed) property.SetValue(mask);
                     // EditorGUI.EndProperty();
                     return;
@@ -33,20 +46,25 @@ namespace MeshTilesetsEditor
             EditorGUI.HelpBox(position, "No Tileset found", MessageType.None);
         }
 
-        public static void DrawTilesetFlagsMask(GUIContent label, TilesetFlagsMask mask, Tileset tileset, ref bool foldout)
+        public static void DrawTilesetFlagsMask(Rect pos, GUIContent label, TilesetFlagsMask mask, Tileset tileset, ref bool foldout)
         {
-            foldout = EditorGUILayout.Foldout(foldout, label);
-
+            // Foldout
+            pos.height = EditorGUIUtility.singleLineHeight;
+            foldout = EditorGUI.Foldout(pos, foldout, label);
+            pos.y += pos.height + EditorGUIUtility.standardVerticalSpacing;
+            
+            // Indent
+            pos.x += EditorGUIUtility.singleLineHeight;
+            pos.width -= EditorGUIUtility.singleLineHeight;
+            
             if (foldout)
             {
-                EditorGUI.indentLevel++;
-                DrawTilesetFlagsMask(label, mask, tileset);
-                EditorGUI.indentLevel--;
+                DrawTilesetFlagsMask(pos, label, mask, tileset);
             }
             // EditorGUILayout.EndFoldoutHeaderGroup();
         }
 
-        public static void DrawTilesetFlagsMask(GUIContent label, TilesetFlagsMask mask, Tileset tileset)
+        public static void DrawTilesetFlagsMask(Rect pos, GUIContent label, TilesetFlagsMask mask, Tileset tileset)
         {
             var flags = tileset.TilesetFlags;
                 
@@ -56,13 +74,40 @@ namespace MeshTilesetsEditor
 
                 if (flags[i].isToggle)
                 {
-                    mask[i] = EditorGUILayout.Toggle(flags[i].name, mask[i] == 1) ? 1 : 0;
+                    mask[i] = EditorGUI.Toggle(pos, flags[i].name, mask[i] == 1) ? 1 : 0;
                 }
                 else
                 {
-                    mask[i] = EditorGUILayout.Popup(flags[i].name, mask[i], flags[i].OptionsWithUndefined);
+                    mask[i] = EditorGUI.Popup(pos, flags[i].name, mask[i], flags[i].OptionsWithUndefined);
                 }
+                
+                pos.height = EditorGUIUtility.singleLineHeight;
+                pos.y += pos.height + EditorGUIUtility.standardVerticalSpacing;
             }
+        }
+
+        public static void DrawTilesetFlagsMask(GUIContent label, TilesetFlagsMask mask, Tileset tileset, ref bool foldout)
+        {
+            float height = EditorGUIUtility.singleLineHeight + (foldout ? tileset.TilesetFlags.GetDisplayHeight() : 0);
+            var rect = GUILayoutUtility.GetRect(0, EditorGUIUtility.currentViewWidth, height, height);
+            DrawTilesetFlagsMask(rect, label, mask, tileset, ref foldout);
+        }
+
+        public static void DrawTilesetFlagsMask(GUIContent label, TilesetFlagsMask mask, Tileset tileset)
+        {
+            float height = tileset.TilesetFlags.GetDisplayHeight();
+            var rect = GUILayoutUtility.GetRect(0, EditorGUIUtility.currentViewWidth, height, height);
+            DrawTilesetFlagsMask(rect, label, mask, tileset);
+        }
+    }
+
+    public static class TilesetFlagsExtension
+    {
+        public static float GetDisplayHeight(this TilesetFlags[] flags)
+        {
+            return flags.Aggregate(0f, (r, f) => 
+                r + (f.IsEnabled ? EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing : 0)       
+            );
         }
     }
 }
