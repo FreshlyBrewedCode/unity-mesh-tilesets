@@ -10,6 +10,8 @@ Unity Mesh Tilesets is a [Unity] editor extension that can be used to automatica
 
 ## Installation
 
+Mesh Tilesets requires [ProBuilder]. ProBuilder will be added automatically to your project if it has not been installed yet. It is also highly recommended to install [ProGrids] as well (note that ProGrids is still in preview so you have to [enable preview packages][PreviewPackages] in the package manager).
+
 ### OpenUPM (recommended)
 
 Make sure you have the [OpenUPM CLI][OpenUPM] installed. From the root of your project run:
@@ -23,6 +25,8 @@ Open the Unity package manager, click on the plus icon in the top left corner an
 ```
 https://github.com/FreshlyBrewedCode/unity-mesh-tilesets.git#upm
 ```
+
+**Note: You will not be able to select a specific version or update the package using this method. If you want to update to the latest version you have to remove the package and add it again using the url above.**
 
 ### Manual Download
 
@@ -69,6 +73,8 @@ Here are some example use cases for the tool. I am sure there are many more crea
 
 [Unity]: https://unity.com
 [ProBuilder]: https://unity3d.com/de/unity/features/worldbuilding/probuilder
+[ProGrids]: https://docs.unity3d.com/Packages/com.unity.progrids@3.0/manual/index.html
+[PreviewPackages]: https://docs.unity3d.com/Manual/upm-ui-list.html#ShowPreview
 [Source2]: https://www.youtube.com/watch?v=3ki67VLL0xI&ab_channel=Hosomi
 [Releases]: https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/releases
 [OpenUPM]: https://openupm.com/
