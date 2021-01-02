@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -209,6 +209,8 @@ MonoBehaviour:
   id: 3
   width: 1
   height: 1.0000001
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 1
     bottom: 3
@@ -276,7 +278,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -345,6 +347,8 @@ MonoBehaviour:
   id: 9
   width: 1
   height: 3
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 3
@@ -400,6 +404,8 @@ MonoBehaviour:
   id: 6
   width: 1
   height: 1
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 3
@@ -455,6 +461,8 @@ MonoBehaviour:
   id: 7
   width: 1
   height: 4.9999995
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 3
@@ -462,7 +470,12 @@ MonoBehaviour:
     right: 1
   tilesetFlags:
     flags: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  hideGroups: []
+  hideGroups:
+  - groupTag:
+      tagName: 
+    hideMode: 0
+    tilesetFlags:
+      flags: 
 --- !u!1 &1733009144187797698
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +535,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -603,7 +616,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -672,6 +685,8 @@ MonoBehaviour:
   id: 11
   width: 1
   height: 1
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 3
@@ -727,6 +742,8 @@ MonoBehaviour:
   id: 12
   width: 1
   height: 1
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 3
@@ -794,7 +811,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -875,7 +892,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -956,7 +973,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1025,6 +1042,8 @@ MonoBehaviour:
   id: 14
   width: 1
   height: 1
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 5
@@ -1092,7 +1111,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1161,6 +1180,8 @@ MonoBehaviour:
   id: 8
   width: 1
   height: 4
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 3
@@ -1228,7 +1249,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1309,7 +1330,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1390,7 +1411,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1592,7 +1613,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 52d41529ac62dd741863220baea8e50f, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1661,6 +1682,8 @@ MonoBehaviour:
   id: 2
   width: 1
   height: 1
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 1
@@ -1716,6 +1739,8 @@ MonoBehaviour:
   id: 4
   width: 1
   height: 1
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 4
@@ -1771,6 +1796,8 @@ MonoBehaviour:
   id: 13
   width: 1
   height: 1
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 5
     bottom: 3
@@ -1826,6 +1853,8 @@ MonoBehaviour:
   id: 5
   width: 1
   height: 1
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 4
     bottom: 3
@@ -1881,6 +1910,8 @@ MonoBehaviour:
   id: 10
   width: 1
   height: 2
+  overrideOrientation: 0
+  orientation: 0
   edgeFlags:
     top: 3
     bottom: 3
