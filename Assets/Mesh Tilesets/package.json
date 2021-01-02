@@ -1,6 +1,6 @@
 {
 	"name": "com.freshlybrewedcode.unity-mesh-tilesets",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"displayName": "Mesh Tilesets",
 	"description": "a Unity plugin to place objects along ProBuilder meshes based on rules from tileset. Heavily inspired by the tooling in Source 2.",
 	"unity": "2020.2",
@@ -12,9 +12,11 @@
 		"com.unity.probuilder": "4.2.3"
 	},
 	"scopedRegistries": [],
-	"samples": [{
-		"displayName": "Example Tilesets",
-		"description": "Examples tilesets for pipes, ducts, railings, catwalks and buildings.",
-		"path": "Samples~"
-	}]
+	"samples": [
+		{
+			"displayName": "Example Tilesets",
+			"description": "Examples tilesets for pipes, ducts, railings, catwalks and buildings.",
+			"path": "Samples~"
+		}
+	]
 }
