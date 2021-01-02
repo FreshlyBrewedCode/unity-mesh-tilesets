@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/compare/v1.0.1...v1.0.2) (2021-01-02)
+
+
+### Bug Fixes
+
+* add assembly definitions ([ab3c64f](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/commit/ab3c64f4a41a12cd5d252d36eec113997e4c84cd))
+
 ## [1.0.1](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/compare/v1.0.0...v1.0.1) (2021-01-02)
 
 
