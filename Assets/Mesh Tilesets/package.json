@@ -11,5 +11,10 @@
 	"dependencies": {
 		"com.unity.probuilder": "4.2.3"
 	},
-	"scopedRegistries": []
+	"scopedRegistries": [],
+	"samples": [{
+		"displayName": "Example Tilesets",
+		"description": "Examples tilesets for pipes, ducts, railings, catwalks and buildings.",
+		"path": "Samples~"
+	}]
 }
