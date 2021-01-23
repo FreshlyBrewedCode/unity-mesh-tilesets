@@ -23,6 +23,8 @@ namespace MeshTilesetsEditor
             this.target = target;
             var unityEditor = Assembly.GetAssembly(typeof(UnityEditor.SceneView));
             
+            // Credit to @LogicalError for the Unity 2019 code path
+            // (Original: https://github.com/RadicalCSG/Chisel.Prototype/blob/master/Packages/com.chisel.editor/Chisel/Editor/Editor/Scene/Overlays/ChiselOverlay.cs)
 #if UNITY_2019_3 || UNITY_2019_4
             var overlayWindowType = unityEditor.GetType("UnityEditor.SceneViewOverlay+OverlayWindow");
 #elif UNITY_2020_1_OR_NEWER
@@ -37,29 +39,23 @@ namespace MeshTilesetsEditor
             
 #if UNITY_2019_3 || UNITY_2019_4
                 windowMethod = sceneViewOverlayType.GetMethods(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public).FirstOrDefault(t => t.Name == "Window" && t.GetParameters().Length == 6);
+                windowMethodParams = new object[]
+                { 
+                    title, sceneViewFuncDelegate, priority, target, windowDisplayOption, null
+                };
 #elif UNITY_2020_1_OR_NEWER  
                 //public static void ShowWindow(OverlayWindow window)
                 windowMethod = sceneViewOverlayType.GetMethod("ShowWindow", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
+                
+                //public OverlayWindow(GUIContent title, SceneViewOverlay.WindowFunction guiFunction, int primaryOrder, Object target, SceneViewOverlay.WindowDisplayOption option)
+                sceneOverlayWindow = Activator.CreateInstance(overlayWindowType, 
+                    title,
+                    sceneViewFuncDelegate,
+                    int.MaxValue, this.target, 
+                    windowDisplayOption //SceneViewOverlay.WindowDisplayOption.OneWindowPerTarget
+                );
+                windowMethodParams = new object[] { sceneOverlayWindow };
 #endif
-
-#if UNITY_2019_3 || UNITY_2019_4
-            windowMethodParams = new object[]
-            { 
-                title, sceneViewFuncDelegate, priority, target, windowDisplayOption, null
-            };
-#elif UNITY_2020_1_OR_NEWER
-            //public OverlayWindow(GUIContent title, SceneViewOverlay.WindowFunction guiFunction, int primaryOrder, Object target, SceneViewOverlay.WindowDisplayOption option)
-            sceneOverlayWindow = Activator.CreateInstance(overlayWindowType, 
-                title,
-                sceneViewFuncDelegate,
-                int.MaxValue, this.target, 
-                windowDisplayOption //SceneViewOverlay.WindowDisplayOption.OneWindowPerTarget
-            );
-            windowMethodParams = new object[] { sceneOverlayWindow };
-#endif
-            
-            //showWindow = sceneViewOverlayType.GetMethod("ShowWindow", BindingFlags.Static | BindingFlags.Public);
-            // showWindow = Delegate.CreateDelegate(typeof(ShowWindowFunc), showSceneViewOverlay) as ShowWindowFunc;
         }
 
         public void ShowWindow()
