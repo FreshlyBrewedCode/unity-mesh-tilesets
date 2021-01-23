@@ -67,7 +67,8 @@ namespace MeshTilesetsEditor
         public static void DrawTilesetFlagsMask(Rect pos, GUIContent label, TilesetFlagsMask mask, Tileset tileset)
         {
             var flags = tileset.TilesetFlags;
-                
+            pos.height = EditorGUIUtility.singleLineHeight;   
+            
             for (int i = 0; i < Tileset.TILESET_FLAGS_COUNT; i++)
             {
                 if(!flags[i].IsEnabled) continue;
@@ -81,7 +82,6 @@ namespace MeshTilesetsEditor
                     mask[i] = EditorGUI.Popup(pos, flags[i].name, mask[i], flags[i].OptionsWithUndefined);
                 }
                 
-                pos.height = EditorGUIUtility.singleLineHeight;
                 pos.y += pos.height + EditorGUIUtility.standardVerticalSpacing;
             }
         }
