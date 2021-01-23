@@ -51,11 +51,11 @@ namespace MeshTilesetsEditor
             //public OverlayWindow(GUIContent title, SceneViewOverlay.WindowFunction guiFunction, int primaryOrder, Object target, SceneViewOverlay.WindowDisplayOption option)
             sceneOverlayWindow = Activator.CreateInstance(overlayWindowType, 
                 title,
-                windowFunc,
+                sceneViewFuncDelegate,
                 int.MaxValue, this.target, 
                 windowDisplayOption //SceneViewOverlay.WindowDisplayOption.OneWindowPerTarget
             );
-            windowMethodParams = new object[] { overlayWindow };
+            windowMethodParams = new object[] { sceneOverlayWindow };
 #endif
             
             //showWindow = sceneViewOverlayType.GetMethod("ShowWindow", BindingFlags.Static | BindingFlags.Public);
