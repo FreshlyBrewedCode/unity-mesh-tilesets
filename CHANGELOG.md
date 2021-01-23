@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/compare/v1.0.3...v1.0.4) (2021-01-23)
+
+
+### Bug Fixes
+
+* adjust reflection code in `SceneOverlayWindow` for Unity 2019 ([8cff072](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/commit/8cff0721a7c317a142d5f440c2237afc264c2349)), closes [#2](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/issues/2)
+* fix incorrect height for first flag in `TilesetFlagsMaskDrawer` ([5939246](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/commit/59392468e1ed3728a0a2a5731e18ccc085aab08f))
+* Unity 2020 code for `SceneOverlayWindow` ([6194578](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/commit/61945783f428a3f860b469c5031ec35edc2dbc16))
+
 ## [1.0.3](https://github.com/FreshlyBrewedCode/unity-mesh-tilesets/compare/v1.0.2...v1.0.3) (2021-01-02)
 
 
